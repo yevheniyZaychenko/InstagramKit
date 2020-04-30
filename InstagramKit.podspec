@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'InstagramKit'
-  s.version          = '4.1'
+  s.version          = '4.2'
   s.summary          = 'Instagram iOS SDK.'
   s.description      = <<-DESC
 An extensive Objective C SDK for the Instagram API.
@@ -16,7 +16,7 @@ An extensive Objective C SDK for the Instagram API.
 
   s.ios.deployment_target = '9.0'
   s.source_files = 'InstagramKit/Classes/**/*'
-  s.dependency 'AFNetworking', '~>3.0'
+  s.dependency 'AFNetworking'
   s.default_subspec = 'InstagramKit-without-UICKeyChainStore'
   
   s.subspec 'InstagramKit-without-UICKeyChainStore' do |exclude_uickeychainstore|
@@ -26,7 +26,7 @@ An extensive Objective C SDK for the Instagram API.
   s.subspec 'UICKeyChainStore' do |uickeychainstore|
       uickeychainstore.xcconfig    =
       { 'OTHER_CFLAGS' => '$(inherited) -INSTAGRAMKIT_INCLUDE_UICKEYCHAINSTORE' }
-      uickeychainstore.dependency 'UICKeyChainStore', '~>2.0'
+      uickeychainstore.dependency 'UICKeyChainStore'
   end
   
   # s.resource_bundles = {
